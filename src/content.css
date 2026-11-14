@@ -1,0 +1,4 @@
+[data-x-player-fix] [data-testid="videoPlayer"]:has(video) {
+  outline: 1px solid #55d9d0;
+  outline-offset: -1px;
+}

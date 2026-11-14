@@ -1,0 +1,34 @@
+{
+  "name": "video-player-fix",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Fix X/Twitter video-slider drag drift in Firefox, with hold-to-2x playback as an extra convenience.",
+  "keywords": [],
+  "homepage": "https://github.com/busheezy/x-player-fix",
+  "license": "ISC",
+  "author": "Ryan Bucshon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/busheezy/x-player-fix.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "dev": "node scripts/build.ts --watch",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint --deny-warnings .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run build && web-ext lint --source-dir dist --warnings-as-errors",
+    "package": "npm run check && web-ext build --source-dir dist --artifacts-dir artifacts --overwrite-dest",
+    "start": "npm run build && web-ext run --source-dir dist --start-url https://x.com"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
+    "typescript": "^7.0.2",
+    "web-ext": "^10.8.0"
+  }
+}

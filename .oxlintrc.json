@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": { "correctness": "error" },
+  "rules": {
+    "complexity": ["error", { "max": 10 }],
+    "max-depth": ["error", { "max": 3 }]
+  },
+  "ignorePatterns": ["dist/**", "artifacts/**", ".local/**"]
+}

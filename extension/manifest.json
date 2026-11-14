@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "X Player Fix",
+  "version": "0.3.0",
+  "description": "Fix X/Twitter video-slider drag drift in Firefox. Includes hold-to-2x playback as an extra convenience.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "native-video-for-x@video-player-fix.local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://*.x.com/*",
+        "https://twitter.com/*",
+        "https://*.twitter.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
